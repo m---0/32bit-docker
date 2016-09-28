@@ -1,5 +1,5 @@
-# debian-docker
-scripts and Dockerfiles to build jmtd/debian\* docker images
+# 32bit-docker
+Scripts and Dockerfiles to build 32bit docker images
 
 What I use to build `jmtd/debian:*` docker images on the Docker registry.
 
@@ -30,29 +30,3 @@ sudo make release=jessie prefix=jmtd arch=amd64 mirror=http://httpredir.debian.o
 All the arguments above are optional. The values in the example above are
 the defaults. The resulting image would be tagged `jmtd/debian:jessie-amd64`.
 
-## Future work
-
-I don't want to maintain a zillion different images, but there are a few other
-variants that might be of use for people:
-
- * Now *jessie* is released, I'll probably add *jessie-i386* and phase out
-   *wheezy-i386*.
- * Perhaps introduce floating release tags, e.g. `:stable`.
- * A `wine` base image, derived from (probably) `jessie-i386`.
- * Possibly a base X image, with x11vnc, uxterm and a lightweight window
-   manager. Last I checked `openbox` was a bit smaller than `icewm`.
- * minimised images. As per Joey H's blog, The *Debian* images here are
-   base Debian images, to avoid being misleading, but that makes them much
-   larger than Docker's "semi-official" Debian images (twice as large). We
-   could/should offer minimized images, starting with `--variant=minbase`
-   but also incorporating other things, such as some of the techniques used
-   by [emdebian](http://emdebian.org/). Just so long as we clearly label them
-   as being modified from stock Debian.
-
-## Further Reading
-
-[what does docker.io run -it debian sh
-run?](http://joeyh.name/blog/entry/docker_run_debian/) by Joey Hess, which
-recommends <q>only trust docker images you build yourself</q>.
-
- — Jonathan Dowland <jmtd@debian.org>
