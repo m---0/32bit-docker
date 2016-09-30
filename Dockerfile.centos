@@ -1,0 +1,12 @@
+FROM scratch
+MAINTAINER Massimo Schenone <massimo.schenone@gmail.com>
+ADD root.tar /
+
+RUN yum update -y \
+	&& yum clean all
+
+LABEL org.redmars.docker.VcsType git
+LABEL org.redmars.docker.VcsUrl  http://github.com/m---0/32bit-docker
+LABEL org.redmars.docker.VcsRef  SUBSTITUTION_FAILED
+
+CMD ["/bin/bash"]

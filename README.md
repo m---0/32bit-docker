@@ -1,7 +1,5 @@
 # 32bit-docker
-Scripts and Dockerfiles to build 32bit docker images
-
-What I use to build `jmtd/debian:*` docker images on the Docker registry.
+Scripts and Dockerfiles to build docker images
 
 ## Description of images
 
@@ -24,7 +22,7 @@ What I use to build `jmtd/debian:*` docker images on the Docker registry.
 To build your own images, clone this repo, cd to the local path and run
 
 ```
-sudo make release=jessie prefix=jmtd arch=amd64 mirror=http://httpredir.debian.org/debian/
+sudo make release=jessie prefix=massimos arch=i386 mirror=http://httpredir.debian.org/debian/
 ```
 
 All the arguments above are optional. The values in the example above are
